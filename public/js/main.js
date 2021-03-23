@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     let today = new Date();
-    let birthday = new Date(2021, 0, 4)
+    let birthday = new Date(config.birth_year, config.birth_month - 1, config.birth_day)
     let age = today.getTime() - birthday.getTime();
     
     ageRemainder = age / (1000 * 3600 * 24);

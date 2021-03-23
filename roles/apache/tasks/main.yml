@@ -1,0 +1,7 @@
+---
+- name: Install httpd
+  package:
+    name: 
+      - apache2
+    state: latest
+  notify: Start Apache

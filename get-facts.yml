@@ -1,0 +1,19 @@
+---
+- hosts: webservers
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Save host facts on control node
+      block:
+        - name: Create output directory
+          file:
+            path: "{{ playbook_dir }}/ansible-debug"
+            state: directory
+
+        - name: Output facts
+          copy:
+            content: "{{ ansible_facts }}"
+            dest: "{{ playbook_dir }}/ansible-debug/{{ inventory_hostname }}-facts.json"
+      delegate_to: localhost
+      become: no

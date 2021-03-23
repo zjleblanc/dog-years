@@ -3,14 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Murphy's Age</title>
+    <title>{{ dog_name }}'s Age</title>
+    <link rel="shortcut icon" type="image/png" href="assets/{{ dog_profile_pic}}.png"/>
     <link rel="manifest" href="/app.manifest.json" crossorigin="use-credentials">
 
     <script>
       config = {
-        birth_year: 2021,
-        birth_month: 1,
-        birth_day: 4
+        birth_year: {{ birth_year | int }},
+        birth_month: {{ birth_month | int }},
+        birth_day: {{ birth_day | int }}
       }
     </script>
     <script src="js/main.js"></script>
@@ -20,13 +21,13 @@
     <link rel="stylesheet" href="css/main.css">
 
     <!-- Home Screen Icon -->
-    <link rel="apple-touch-icon" sizes="200x200" href="assets/murphy-200.png">
+    <link rel="apple-touch-icon" sizes="200x200" href="assets/{{ dog_profile_pic}}.png">
   </head>
   <body>
     <div class="main container">
       <div class="row justify-content-md-center">
         <div class="col text-center">
-          <img src="assets/murphy-200.png" class="logo" alt="Murphy">
+          <img src="assets/{{ dog_profile_pic}}.png" class="logo" alt="{{ dog_name }}">
         </div>
       </div>
 

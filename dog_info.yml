@@ -1,0 +1,6 @@
+dog_name: Murphy # My dog's name :)
+dog_profile_pic: dog-200 # Expects file type .png
+
+birth_year: 2021
+birth_month: 1
+birth_day: 4

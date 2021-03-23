@@ -5,3 +5,7 @@ package-lock.json
 # Firebase
 .firebase
 .firebaserc
+
+# Ansible
+inventory
+ansible-debug
