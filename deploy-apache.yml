@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  become: no
+  gather_facts: no
+
+  pre_tasks:
+    - name: Include external vars
+      include_vars:
+        file: dog_info.yml
+
+  roles:
+    - webapp
+
+- hosts: webservers
+  become: yes
+  gather_facts: no
+
+  roles:
+    - apache

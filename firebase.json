@@ -1,10 +1,11 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "site",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "site/templates/**"
     ],
     "rewrites": [
       {

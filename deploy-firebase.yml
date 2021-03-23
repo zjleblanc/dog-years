@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  become: no
+  gather_facts: no
+
+  pre_tasks:
+    - name: Include external vars
+      include_vars:
+        file: dog_info.yml
+
+  roles:
+    - webapp
+
+- hosts: localhost
+  become: no
+  gather_facts: no
+
+  pre_tasks:
+    - name: Include vault
+      include_vars:
+        file: firebase.vault
+
+  roles:
+    - firebase

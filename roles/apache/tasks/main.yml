@@ -5,3 +5,28 @@
       - apache2
     state: latest
   notify: Start Apache
+
+- name: Create site directories
+  file:
+    path: "{{ web_root }}/{{ item }}"
+    state: directory
+  loop:
+    - js
+    - css
+    - assets
+
+- name: Query files to copy
+  set_fact:
+    web_content: "{{ lookup('filetree', 'site/') | list }}"
+  delegate_to: localhost
+  become: no
+
+- name: Copy web content
+  copy:
+    src: "{{ item.root + item.path }}"
+    dest: "{{ web_root }}/{{ item.path }}"
+  when: 
+    - '"templates" not in item.path'
+    - 'item.state != "directory"'
+  loop: "{{ web_content }}"
+  notify: Start Apache

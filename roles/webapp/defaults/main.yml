@@ -1,4 +1,2 @@
-web_content: /var/www/html
-
 dog_name: Murphy # My dog's name :)
 dog_profile_pic: dog-200 # Expects file type .png

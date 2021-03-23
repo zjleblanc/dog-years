@@ -5,10 +5,13 @@ package-lock.json
 # Firebase
 .firebase
 .firebaserc
+firebase-deploy.log.json
+firebase.vault
 
 # Ansible
 inventory
 ansible-debug
+sandbox.yml
 
 # Misc.
 .DS_Store

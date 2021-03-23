@@ -6,30 +6,10 @@
       - birth_month|int
       - birth_day|int
 
-- name: Create site directories
-  file:
-    path: "{{ web_content }}/{{ item }}"
-    state: directory
-  loop:
-    - js
-    - css
-    - assets
-
-- name: Copy static files
-  copy:
-    src: "{{ playbook_dir }}/public/{{ item }}"
-    dest: "{{ web_content }}/{{ item }}"
-  loop:
-    - assets/{{ dog_profile_pic }}.png
-    - css/main.css
-    - js/main.js
-  notify: Restart Apache
-
-- name: Copy dynamic files
+- name: Render templates
   template:
-    src: "templates/{{ item }}"
-    dest: "{{ web_content }}/{{ item | replace('.j2','') }}"
+    src: "{{ playbook_dir }}/site/templates/{{ item }}"
+    dest: "{{ playbook_dir }}/site/{{ item | replace('.j2','') }}"
   loop:
     - index.html.j2
     - app.manifest.json.j2
-  notify: Restart Apache

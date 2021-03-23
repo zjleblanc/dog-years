@@ -1,0 +1,11 @@
+{
+    "name": "Murphy's Age",
+    "short_name": "Dog Years",
+    "display": "standalone",
+    "description": "Murphy's Age on-demand",
+    "icons": [{
+      "src": "assets/dog-200.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }]
+  }

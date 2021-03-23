@@ -1,0 +1,11 @@
+- name: Install firebase-tools
+  shell: curl -sL https://firebase.tools | bash
+
+- name: Deploy project
+  shell: "firebase deploy --token {{ firebase_token }} --project {{ firebase_project }}"
+  register: deploy_logs
+
+- name: Save Logs
+  copy:
+    content: "{{ deploy_logs }}"
+    dest: "{{ playbook_dir }}/firebase-deploy.log.json"
