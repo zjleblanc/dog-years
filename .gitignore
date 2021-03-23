@@ -9,3 +9,6 @@ package-lock.json
 # Ansible
 inventory
 ansible-debug
+
+# Misc.
+.DS_Store
