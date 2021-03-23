@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Murphy's Age</title>
+    <link rel="manifest" href="/app.manifest.json" crossorigin="use-credentials">
+
+    <script src="js/main.js"></script>
+
+    <!-- Bootstrap + Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Home Screen Icon -->
+    <link rel="apple-touch-icon" sizes="200x200" href="assets/murphy-200.png">
+  </head>
+  <body>
+    <div class="main container">
+      <div class="row justify-content-md-center">
+        <div class="col text-center">
+          <img src="assets/murphy-200.png" class="logo" alt="Murphy">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col justify-content-md-center">
+          <div class="list-wrapper">
+            <ul class="age-list list-group list-inline justify-content-center">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Years
+                <span id="years" class="badge bg-primary rounded-pill"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Months
+                <span id="months" class="badge bg-primary rounded-pill"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Weeks
+                <span id="weeks" class="badge bg-primary rounded-pill"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Days
+                <span id="days" class="badge bg-primary rounded-pill"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="puppy" class="row" style="display: none">
+        <div class="col justify-content-md-center">
+          <div class="list-wrapper">
+            <h5 class="text-center">You've got a puppy!</h5>
+            <p class="text-center">Below are some easier ways to express your puppy's age</p>
+            <ul class="age-list list-group list-group-flush list-inline justify-content-center">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Total Months
+                <span id="total-months" class="badge bg-primary rounded-pill"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Total Weeks
+                <span id="total-weeks" class="badge bg-primary rounded-pill"></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Total Days
+                <span id="total-days" class="badge bg-primary rounded-pill"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.main {
+    padding-top: 10px;
+}
+.logo {
+    border-radius: 20%;
+    border: 5px solid rgba(224, 52, 52, 0.993);
+}
+.list-wrapper {
+    padding-top: 10px;
+    width: 200px;
+    margin: auto;
+}
+.bg-primary {
+    background-color: rgba(224, 52, 52, 0.993) !important;
+}
+
+#puppy {
+    display: none;
+}
