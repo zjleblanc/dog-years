@@ -3,6 +3,9 @@
   become: no
   gather_facts: no
 
+  vars:
+    firebase_vault: /root/firebase.vault
+
   pre_tasks:
     - name: Include external vars
       include_vars:
@@ -25,8 +28,9 @@
 
   pre_tasks:
     - name: Include vault
+      become: yes
       include_vars:
-        file: firebase.vault
+        file: "{{ firebase_vault }}"
       when: 'host_service == "firebase"'
 
   roles:
