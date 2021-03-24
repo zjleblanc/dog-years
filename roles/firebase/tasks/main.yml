@@ -9,7 +9,3 @@
   copy:
     content: "{{ deploy_logs }}"
     dest: "{{ playbook_dir }}/firebase-deploy.log.json"
-
-- name: Set site url
-  set_fact:
-    site_url: "https://{{ firebase_project }}.web.app"

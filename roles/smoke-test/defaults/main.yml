@@ -1,0 +1,6 @@
+url_lookup:
+  # This works if you only have one webserver - add .split(',') otherwise
+  apache: "http://{{ lookup('inventory_hostnames','webservers') }}"
+  firebase: "https://{{ firebase_project }}.web.app"
+
+site_url: "{{ url_lookup[host_service] | default('UNK') }}"
