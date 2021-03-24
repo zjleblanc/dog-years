@@ -1,6 +1,6 @@
 - name: Assert site url provided
   assert:
-    that: 'site_url != "UNK'
+    that: 'site_url != "UNK"'
     fail_msg: Must define site_url
 
 - name: Get site content
