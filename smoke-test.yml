@@ -8,10 +8,5 @@
       include_vars:
         file: dog_info.yml
 
-    - name: Include vault
-      include_vars:
-        file: "{{ firebase_vault }}"
-      when: 'host_service == "firebase"'
-
   roles:
     - name: smoke-test
