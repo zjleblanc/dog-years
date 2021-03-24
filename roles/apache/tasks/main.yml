@@ -30,3 +30,7 @@
     - 'item.state != "directory"'
   loop: "{{ web_content }}"
   notify: Start Apache
+
+- name: Set site url
+  set_fact:
+    site_url: "http://{{ inventory_hostname }}"
