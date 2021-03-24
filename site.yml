@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Deploy to Apache
+      import_playbook: deploy_apache.yml
+      when: 'host_service == "apache"'
+
+    - name: Deploy to Firebase
+      import_playbook: deploy_apache.yml
+      when: 'host_service == "firebase"'
+
+    - name: Smoke Test
+      import_playbook: smoke-test.yml
