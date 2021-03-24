@@ -1,0 +1,17 @@
+- name: Assert site url provided
+  assert:
+    that: site_url is defined
+    fail_msg: Must define site_url
+
+- name: Get site content
+  uri:
+    url: "{{ site_url }}"
+    method: GET
+    return_content: yes
+  register: test
+
+- name: Assert content is live
+  assert:
+    that: 
+      - expected_title in test.content
+      - expected_img in test.content

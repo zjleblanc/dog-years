@@ -1,0 +1,2 @@
+expected_title: "<title>{{ dog_name }}'s Age</title>"
+expected_img: "<img src=\"assets/{{ dog_profile_pic}}.png\" class=\"logo\" alt=\"{{ dog_name }}\">"
