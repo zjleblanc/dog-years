@@ -11,6 +11,13 @@
   roles:
     - webapp
 
+- hosts: webservers
+  become: yes
+  gather_facts: no
+
+  roles:
+    - apache
+
 - hosts: localhost
   become: no
   gather_facts: no
@@ -19,6 +26,7 @@
     - name: Include vault
       include_vars:
         file: firebase.vault
+      become: yes
 
   roles:
     - firebase
