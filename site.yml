@@ -1,15 +1,34 @@
 ---
 - hosts: localhost
+  become: no
   gather_facts: no
 
-  tasks:
-    - name: Deploy to Apache
-      import_playbook: deploy_apache.yml
-      when: 'host_service == "apache"'
+  pre_tasks:
+    - name: Include external vars
+      include_vars:
+        file: dog_info.yml
 
-    - name: Deploy to Firebase
-      import_playbook: deploy_apache.yml
+  roles:
+    - webapp
+
+- hosts: webservers
+  become: yes
+  gather_facts: no
+
+  roles:
+    - apache
+    when: 'host_service == "apache"'
+
+- hosts: localhost
+  become: no
+  gather_facts: no
+
+  pre_tasks:
+    - name: Include vault
+      include_vars:
+        file: firebase.vault
       when: 'host_service == "firebase"'
 
-    - name: Smoke Test
-      import_playbook: smoke-test.yml
+  roles:
+    - name: firebase
+      when: 'host_service == "firebase"'
