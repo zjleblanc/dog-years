@@ -23,6 +23,12 @@
   gather_facts: no
 
   pre_tasks:
+    - shell: whoami
+      register: x
+
+    - debug:
+        var: x
+
     - name: Include vault
       include_vars:
         file: firebase.vault
