@@ -3,9 +3,6 @@
   become: no
   gather_facts: no
 
-  vars:
-    firebase_vault: /root/firebase.vault
-
   pre_tasks:
     - name: Include external vars
       include_vars:
