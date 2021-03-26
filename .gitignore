@@ -6,6 +6,7 @@ package-lock.json
 .firebase
 .firebaserc
 firebase-deploy.log.json
+firebase-debug.log
 firebase.vault
 
 # Ansible

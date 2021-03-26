@@ -35,6 +35,16 @@ Roadmap:
 - Export the token 
     - `export FIREBASE_TOKEN=<token>`
 
-## Running the Playbooks
+## Deploying the Site
 
-... TODO ...
+Included in the repo are a few Ansible playbooks used to deploy the site to a specified host service. To take advantage of Ansible Automation, run one of the following commands:
+
+- Apache2: `ansible-playbook site.yml -e host_service=apache`
+- Firebase `ansible-playbook site.yml -e host_service=firebase [-e firebase_token=<token>]`
+  - **firebase_token** extra var is not needed if you completed the setup!
+
+## Testing the Site
+
+A simple smoke test playbook is included in the repo as well. To run, use the following command:
+
+- `ansible-playbook smoke-test.yml -e host_service=<chosen-service>`
