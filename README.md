@@ -20,12 +20,12 @@ Roadmap:
 2. Populate [dog_info.yml](dog_info.yml) with your dog's information
 3. Choose hosting platform
 
-### Apache Setup
+#### Apache
 
 - Copy [inventory.example](inventory.example) to inventory and populate the placeholder variables to tell Ansible where to deploy the site
 - Complete [SSH setup](https://www.bogotobogo.com/DevOps/Ansible/Ansible-SSH-Connection-Setup-Run-Command.php) so that Ansible can use privilege escalation for tasks when needed
 
-### Firebase Setup
+#### Firebase
 
 - Create a Firebase account
 - Create a new project
