@@ -27,7 +27,9 @@
     - name: Include vault
       include_vars:
         file: "{{ firebase_vault }}"
-      when: 'host_service == "firebase"'
+      when: 
+        - 'host_service == "firebase"'
+        - firebase_vault is defined
 
   roles:
     - name: firebase

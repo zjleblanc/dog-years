@@ -1,11 +1,19 @@
-- name: Install firebase-tools
-  shell: curl -sL https://firebase.tools | bash
+- name: Install Firebase CLI
+  shell: |
+    which firebase > /dev/null 2>&1
+    if [[ $? -eq 1 ]]; then
+      curl -sL https://firebase.tools | bash
+    fi
 
-- name: Deploy project
-  shell: "firebase deploy --token {{ firebase_token }} --project {{ firebase_project }}"
+- name: Set environment token for Firebase CLI to use
+  shell: "export FIREBASE_TOKEN={{ firebase_token }}"
+  when: firebase_token is defined
+
+- name: Deploy project to Firebase
+  shell: "firebase deploy --project {{ firebase_project }}"
   register: deploy_logs
 
-- name: Save Logs
+- name: Save deployment logs
   copy:
     content: "{{ deploy_logs }}"
     dest: "{{ playbook_dir }}/firebase-deploy.log.json"
