@@ -16,9 +16,10 @@ Roadmap:
 
 ## Simple Setup
 
-1. Clone this repository
-2. Populate [dog_info.yml](dog_info.yml) with your dog's information
-3. Choose hosting platform
+1. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) on your control machine
+2. Clone this repository
+3. Populate [dog_info.yml](dog_info.yml) with your dog's information
+4. Choose hosting platform
 
 #### Apache2
 

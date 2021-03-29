@@ -9,7 +9,7 @@
 - name: Render templates
   template:
     src: "{{ playbook_dir }}/site/templates/{{ item }}"
-    dest: "{{ playbook_dir }}/site/{{ item | replace('.j2','') }}"
+    dest: "{{ playbook_dir }}/site/src/{{ item | replace('.j2','') }}"
   loop:
     - index.html.j2
     - app.manifest.json.j2

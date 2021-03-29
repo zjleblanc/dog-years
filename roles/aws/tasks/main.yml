@@ -1,0 +1,15 @@
+- name: Create bucket for site
+  aws_s3:
+    bucket: "{{ aws_project }}.com"
+    mode: create
+    permission: public-read
+
+- name: Configure bucket for static site hosting
+  s3_website:
+    name: "{{ aws_project }}.com"
+    region: "{{ aws_region }}"
+    state: present
+  register: s3_output
+
+- debug:
+    var: s3_output

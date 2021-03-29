@@ -17,7 +17,7 @@
 
 - name: Query files to copy
   set_fact:
-    web_content: "{{ lookup('filetree', 'site/') | list }}"
+    web_content: "{{ lookup('filetree', 'site/src/') | list }}"
   delegate_to: localhost
   become: no
 
@@ -25,8 +25,7 @@
   copy:
     src: "{{ item.root + item.path }}"
     dest: "{{ web_root }}/{{ item.path }}"
-  when: 
-    - '"templates" not in item.path'
+  when:
     - 'item.state != "directory"'
   loop: "{{ web_content }}"
   notify: Start Apache
