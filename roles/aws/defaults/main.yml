@@ -1,2 +1,2 @@
-aws_project: "murphy-age"
 aws_region: "us-east-1"
+web_content: "site/src/"

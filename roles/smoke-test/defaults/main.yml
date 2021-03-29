@@ -1,6 +1,14 @@
+project_name: UNK
+aws_region: "us-east-1"
+
+project_required:
+  - aws
+  - firebase
+
 url_lookup:
   # This works if you only have one webserver - add .split(',') otherwise
   apache: "http://{{ lookup('inventory_hostnames','webservers') }}"
-  firebase: "https://{{ firebase_project }}.web.app"
+  firebase: "https://{{ project_name | default('') }}.web.app"
+  aws: "http://{{ project_name | default('') }}.com.s3-website-{{ aws_region }}.amazonaws.com"
 
 site_url: "{{ url_lookup[host_service] | default('UNK') }}"

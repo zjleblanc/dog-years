@@ -1,12 +1,28 @@
 - name: Create bucket for site
   aws_s3:
-    bucket: "{{ aws_project }}.com"
+    bucket: "{{ project_name }}.com"
     mode: create
     permission: public-read
 
+- name: Query files to copy
+  set_fact:
+    web_content: "{{ lookup('filetree', web_content) | list }}"
+  become: no
+
+- name: Copy web content
+  aws_s3:
+    bucket: "{{ project_name }}.com"
+    src: "{{ item.root + item.path }}"
+    object: "{{ item.path }}"
+    mode: put
+    permission: public-read
+  when:
+    - 'item.state != "directory"'
+  loop: "{{ web_content }}"
+
 - name: Configure bucket for static site hosting
   s3_website:
-    name: "{{ aws_project }}.com"
+    name: "{{ project_name }}.com"
     region: "{{ aws_region }}"
     state: present
   register: s3_output

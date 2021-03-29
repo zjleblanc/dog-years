@@ -41,7 +41,7 @@ Roadmap:
 Included in the repo are a few Ansible playbooks used to deploy the site to a specified host service. To take advantage of Ansible Automation, run one of the following commands:
 
 - Apache2: `ansible-playbook site.yml -e host_service=apache`
-- Firebase `ansible-playbook site.yml -e host_service=firebase -e firebase_project=<project-name> [-e firebase_token=<token>]`
+- Firebase `ansible-playbook site.yml -e host_service=firebase -e project_name=<project-name> [-e firebase_token=<token>]`
   - **firebase_token** extra var is not needed if you completed the setup!
 
 ## Testing the Site

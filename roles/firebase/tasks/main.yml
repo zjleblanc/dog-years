@@ -10,7 +10,7 @@
   when: firebase_token is defined
 
 - name: Deploy project to Firebase
-  shell: "firebase deploy --project {{ firebase_project }}"
+  shell: "firebase deploy --project {{ project_name }}"
   register: deploy_logs
 
 - name: Save deployment logs

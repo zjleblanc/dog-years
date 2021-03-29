@@ -1,3 +1,9 @@
+- name: Assert project defined
+  assert:
+    that: project_name is defined
+    fail_msg: Must define project_name
+  when: host_service in project_required
+
 - name: Assert site url provided
   assert:
     that: 'site_url != "UNK"'
