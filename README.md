@@ -40,7 +40,10 @@ Roadmap:
 
 #### AWS
 
-- TODO
+- [Create](https://aws.amazon.com/console/) an AWS account
+- [Generate](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys an access key ID and secret key) an access key ID and secret key
+- Configure the CLI `aws configure`
+- Confirm configuration succeeded `aws configure list`
 
 ## Deploying the Site
 
