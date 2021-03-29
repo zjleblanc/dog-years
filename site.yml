@@ -17,7 +17,7 @@
         - include_role:
             name: apache
       become: yes
-      delegate_to: webservers
+      delegate_to: "{{ groups['webservers'][0] }}"
       when: 'host_service == "apache"'
 
     - name: Deploy to Firebase
